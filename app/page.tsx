@@ -1,60 +1,63 @@
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const proxies = [
+    { name: "Utopia", ip: "104.218.50.66" },
+    { name: "Shadow", ip: "104.243.38.18" },
+    { name: "Falcon", ip: "104.243.43.17" },
+    { name: "Interstellar", ip: "66.23.193.126" },
+    { name: "Froggys", ip: "152.53.81.196" },
+    { name: "Vapor", ip: "199.180.255.67" },
+    { name: "Lunar", ip: "66.23.198.228" },
+    { name: "UniUB", ip: "104.243.42.228" },
+    { name: "Bolt", ip: "104.36.85.232" },
+    { name: "Szvy", ip: "152.53.38.100" },
+    { name: "55gms", ip: "152.53.37.155" },
+    { name: "Void", ip: "152.53.80.168" },
+    { name: "Vyper", ip: "152.53.53.8" },
+    { name: "Meximath", ip: "152.53.80.107" },
+    { name: "Obscura", ip: "151.101.65.194" },
+    { name: "Waves", ip: "172.96.142.25" },
+    { name: "Ocular", ip: "172.93.100.82" },
+    { name: "BordomV2", ip: "152.53.36.42" },
+    { name: "VPLAZA", ip: "213.136.73.63" },
+    { name: "Night", ip: "104.243.45.193" },
+    { name: "Velera", ip: "152.53.83.13" },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gray-900 text-white">
+      {/* Main Content */}
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-4xl">
+        <h1 className="text-4xl font-bold text-purple-500 mb-6">
+          Proxy List
+        </h1>
+
+        <div className="overflow-x-auto w-full">
+          <table className="table-auto w-full border-collapse border border-purple-500">
+            <thead>
+              <tr className="bg-purple-700">
+                <th className="border border-purple-500 px-4 py-2">Name</th>
+                <th className="border border-purple-500 px-4 py-2">IP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {proxies.map((p, i) => (
+                <tr key={i} className="hover:bg-purple-800">
+                  <td className="border border-purple-500 px-4 py-2">{p.name}</td>
+                  <td className="border border-purple-500 px-4 py-2">{p.ip}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </main>
+
+      {/* Footer */}
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://nextjs.org/docs"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -65,37 +68,22 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Learn
+          Docs
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://vercel.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             aria-hidden
-            src="/window.svg"
-            alt="Window icon"
+            src="/vercel.svg"
+            alt="Vercel icon"
             width={16}
             height={16}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          Vercel
         </a>
       </footer>
     </div>
